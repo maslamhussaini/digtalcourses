@@ -148,8 +148,8 @@ export default function EnrollmentForm() {
               <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
                 {courses.map(course => (
                   <label key={course.id} className={`relative flex items-center p-4 rounded-xl border-2 transition-all cursor-pointer group ${selectedCourses.includes(course.id)
-                      ? 'bg-slate-800/80 border-brand-cyan shadow-[0_0_15px_rgba(0,194,255,0.1)]'
-                      : 'bg-slate-800/40 border-slate-700 hover:border-slate-500'
+                    ? 'bg-slate-800/80 border-brand-cyan shadow-[0_0_15px_rgba(0,194,255,0.1)]'
+                    : 'bg-slate-800/40 border-slate-700 hover:border-slate-500'
                     }`}>
                     <input
                       type="checkbox"
@@ -310,6 +310,37 @@ export default function EnrollmentForm() {
                 'Submit Application'
               )}
             </button>
+
+            {/* Social Media Links */}
+            <div className="pt-8 mt-8 border-t border-slate-800 text-center">
+              <p className="text-slate-400 mb-4">Follow us on Social Media</p>
+              <div className="flex justify-center gap-6">
+                {/* Facebook */}
+                <a href="#" target="_blank" rel="noopener noreferrer" className="p-3 bg-slate-800 rounded-full text-slate-400 hover:text-blue-500 hover:bg-slate-700 transition-all transform hover:scale-110">
+                  <span className="sr-only">Facebook</span>
+                  <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                    <path fillRule="evenodd" d="M22 12c0-5.523-4.477-10-10-10S2 6.477 2 12c0 4.991 3.657 9.128 8.438 9.878v-6.987h-2.54V12h2.54V9.797c0-2.506 1.492-3.89 3.777-3.89 1.094 0 2.238.195 2.238.195v2.46h-1.26c-1.243 0-1.63.771-1.63 1.562V12h2.773l-.443 2.89h-2.33v6.988C18.343 21.128 22 16.991 22 12z" clipRule="evenodd" />
+                  </svg>
+                </a>
+
+                {/* Instagram */}
+                <a href="#" target="_blank" rel="noopener noreferrer" className="p-3 bg-slate-800 rounded-full text-slate-400 hover:text-pink-500 hover:bg-slate-700 transition-all transform hover:scale-110">
+                  <span className="sr-only">Instagram</span>
+                  <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                    <path fillRule="evenodd" d="M12.315 2c2.43 0 2.784.013 3.808.06 1.064.049 1.791.218 2.427.465a4.902 4.902 0 011.772 1.153 4.902 4.902 0 011.153 1.772c.247.636.416 1.363.465 2.427.048 1.067.06 1.407.06 4.123v.08c0 2.643-.012 2.987-.06 4.043-.049 1.064-.218 1.791-.465 2.427a4.902 4.902 0 01-1.153 1.772 4.902 4.902 0 01-1.772 1.153c-.636.247-1.363.416-2.427.465-1.067.048-1.407.06-4.123.06h-.08c-2.643 0-2.987-.012-4.043-.06-1.064-.049-1.791-.218-2.427-.465a4.902 4.902 0 01-1.772-1.153 4.902 4.902 0 01-1.153-1.772c-.247-.636-.416-1.363-.465-2.427-.047-1.024-.06-1.379-.06-3.808v-.63c0-2.43.013-2.784.06-3.808.049-1.064.218-1.791.465-2.427a4.902 4.902 0 011.153-1.772A4.902 4.902 0 014.18 3.388c.636-.247 1.363-.416 2.427-.465C7.901 2.013 8.254 2 11.685 2h.63zm-.081 1.802h-.468c-3.356 0-3.698.015-4.853.064-.7.03-1.096.138-1.362.241-.366.143-.63.313-.91.592-.28.28-.45.543-.592.91-.103.266-.211.66-.241 1.362-.049 1.155-.064 1.497-.064 4.853v.468c0 3.356.015 3.698.064 4.853.03.7.138 1.096.241 1.362.143.366.313.63.592.91.28.28.543.45.91.592.266.103.66.211 1.362.241 1.155.049 1.497.064 4.853.064h.468c3.356 0 3.698-.015 4.853-.064.7-.03 1.096-.138 1.362-.241.366-.143.63-.313.91-.592.28-.28.45-.543.592-.91.103-.266.211-.66.241-1.362.049-1.155.064-1.497.064-4.853v-.468c0-3.356-.015-3.698-.064-4.853-.03-.7-.138-1.096-.241-1.362-.143-.366-.313-.63-.592-.91-.28-.28-.543-.45-.91-.592-.266-.103-.66-.211-1.362-.241-1.155-.049-1.497-.064-4.853-.064z" clipRule="evenodd" />
+                    <path fillRule="evenodd" d="M12.315 6.853a5.148 5.148 0 110 10.297 5.148 5.148 0 010-10.297zm0 1.802a3.346 3.346 0 100 6.691 3.346 3.346 0 000-6.691zM18.667 6.463a1.2 1.2 0 110-2.4 1.2 1.2 0 010 2.4z" clipRule="evenodd" />
+                  </svg>
+                </a>
+
+                {/* WhatsApp */}
+                <a href="#" target="_blank" rel="noopener noreferrer" className="p-3 bg-slate-800 rounded-full text-slate-400 hover:text-green-500 hover:bg-slate-700 transition-all transform hover:scale-110">
+                  <span className="sr-only">WhatsApp</span>
+                  <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                    <path d="M12.012 2c-5.506 0-9.989 4.478-9.99 9.984a9.964 9.964 0 001.333 4.993L2 22l5.122-1.342A9.961 9.961 0 0012.016 22c5.506 0 9.989-4.478 9.989-9.984 0-5.507-4.483-9.984-9.993-9.984zm0 18.266a8.256 8.256 0 01-4.223-1.154l-.303-.179-3.138.823.837-3.059-.196-.313a8.27 8.27 0 01-1.258-4.415c0-4.57 3.727-8.286 8.293-8.286 4.566 0 8.285 3.716 8.285 8.286 0 4.57-3.719 8.286-8.286 8.286zm4.537-6.204c-.249-.124-1.475-.727-1.703-.81-.229-.083-.396-.124-.563.125-.166.249-.643.81-.788.976-.145.166-.29.186-.54.062-.249-.124-1.051-.387-2.003-1.235-.745-.664-1.248-1.485-1.393-1.734-.146-.249-.015-.383.109-.507.112-.11.249-.29.374-.435.124-.146.166-.249.249-.415.083-.166.041-.311-.021-.435-.062-.124-.562-1.353-.769-1.853-.201-.486-.406-.419-.562-.427l-.479-.009c-.166 0-.436.062-.664.311-.228.249-.873.853-.873 2.081 0 1.228.894 2.415 1.018 2.581.125.166 1.76 2.687 4.263 3.767 2.503 1.08 2.503.72 2.96.679.457-.042 1.474-.602 1.682-1.184.207-.581.207-1.079.145-1.183-.062-.104-.228-.166-.477-.291z" />
+                  </svg>
+                </a>
+              </div>
+            </div>
 
           </form>
         </div>
