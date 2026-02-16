@@ -2,6 +2,7 @@
 
 import { useState, useMemo } from 'react';
 import Image from 'next/image';
+import Link from 'next/link';
 import { INITIAL_COURSES } from './config';
 import { submitEnrollment } from './actions';
 
@@ -138,12 +139,25 @@ export default function EnrollmentForm() {
               </div>
             </section>
 
-            {/* Course Selection */}
             <section className="space-y-4 pt-4 border-t border-slate-800">
-              <h2 className="text-xl font-semibold text-brand-cyan flex items-center gap-2">
-                <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"></path></svg>
-                Select Courses <span className="text-sm font-normal text-slate-500 ml-2">(Multiple Allowed)</span>
-              </h2>
+              <div className="flex justify-between items-center">
+                <h2 className="text-xl font-semibold text-brand-cyan flex items-center gap-2">
+                  <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"></path></svg>
+                  Select Courses <span className="hidden sm:inline text-sm font-normal text-slate-500 ml-2">(Multiple Allowed)</span>
+                </h2>
+
+                <Link href="/fee-structure" target="_blank" className="group relative flex items-center justify-center p-2 rounded-full hover:bg-slate-800/50 transition-all">
+                  <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-6 h-6 text-brand-cyan group-hover:text-brand-pink transition-colors">
+                    <path strokeLinecap="round" strokeLinejoin="round" d="M11.25 11.25l.041-.02a.75.75 0 011.063.852l-.708 2.836a.75.75 0 001.063.853l.041-.021M21 12a9 9 0 11-18 0 9 9 0 0118 0zm-9-3.75h.008v.008H12V8.25z" />
+                  </svg>
+
+                  {/* Tooltip */}
+                  <div className="absolute bottom-full mb-2 right-0 w-max px-3 py-1 bg-slate-900 text-brand-cyan text-xs font-bold rounded border border-brand-cyan/30 opacity-0 group-hover:opacity-100 transition-opacity shadow-[0_0_10px_rgba(0,194,255,0.2)] pointer-events-none z-10">
+                    See Fee Detail
+                    <div className="absolute top-full right-4 -mt-px border-4 border-transparent border-t-brand-cyan/30"></div>
+                  </div>
+                </Link>
+              </div>
 
               <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
                 {courses.map(course => (
@@ -390,6 +404,6 @@ export default function EnrollmentForm() {
           <path d="M12.012 2c-5.506 0-9.989 4.478-9.99 9.984a9.964 9.964 0 001.333 4.993L2 22l5.122-1.342A9.961 9.961 0 0012.016 22c5.506 0 9.989-4.478 9.989-9.984 0-5.507-4.483-9.984-9.993-9.984zm0 18.266a8.256 8.256 0 01-4.223-1.154l-.303-.179-3.138.823.837-3.059-.196-.313a8.27 8.27 0 01-1.258-4.415c0-4.57 3.727-8.286 8.293-8.286 4.566 0 8.285 3.716 8.285 8.286 0 4.57-3.719 8.286-8.286 8.286zm4.537-6.204c-.249-.124-1.475-.727-1.703-.81-.229-.083-.396-.124-.563.125-.166.249-.643.81-.788.976-.145.166-.29.186-.54.062-.249-.124-1.051-.387-2.003-1.235-.745-.664-1.248-1.485-1.393-1.734-.146-.249-.015-.383.109-.507.112-.11.249-.29.374-.435.124-.146.166-.249.249-.415.083-.166.041-.311-.021-.435-.062-.124-.562-1.353-.769-1.853-.201-.486-.406-.419-.562-.427l-.479-.009c-.166 0-.436.062-.664.311-.228.249-.873.853-.873 2.081 0 1.228.894 2.415 1.018 2.581.125.166 1.76 2.687 4.263 3.767 2.503 1.08 2.503.72 2.96.679.457-.042 1.474-.602 1.682-1.184.207-.581.207-1.079.145-1.183-.062-.104-.228-.166-.477-.291z" />
         </svg>
       </a>
-    </div>
+    </div >
   );
 }
